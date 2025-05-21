@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Spinner, Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
 import Headings from "./Headings";
 
@@ -23,7 +24,7 @@ const Homepage = () => {
         setAllMovies(results.flat());
         setLoading(false);
       } catch (err) {
-        setError("Errore nel caricamento dei film");
+        setError("Error loading movies");
         setLoading(false);
       }
     };

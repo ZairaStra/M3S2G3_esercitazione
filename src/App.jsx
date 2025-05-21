@@ -5,6 +5,7 @@ import MyFooter from "./components/MyFooter";
 import Homepage from "./components/Homepage";
 import TvShows from "./components/TvShows";
 import Account from "./components/Account";
+import MovieDetails from "./components/MOvieDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Homepage title="Movies" />} />
         <Route path="tv-shows" element={<TvShows title="Tv Shows" />} />
         <Route path="account" element={<Account title="Account" />} />
+        <Route path="/:movieId" element={<MovieDetails title="Movie Details" />} />
       </Routes>
       <MyFooter />
     </BrowserRouter>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Col, Container, Row, Card } from "react-bootstrap";
 
 const Gallery = ({ title, movies }) => {
@@ -7,9 +8,11 @@ const Gallery = ({ title, movies }) => {
       <Row xs={1} sm={2} lg={4} xl={6} className="g-4">
         {movies.map((movie) => (
           <Col key={movie.imdbID} className="text-center">
-            <Card>
-              <Card.Img variant="top" src={movie.Poster} className="card-img img-fluid" />
-            </Card>
+            <Link to={`/${movie.imdbID}`}>
+              <Card>
+                <Card.Img variant="top" src={movie.Poster} className="card-img img-fluid" />
+              </Card>
+            </Link>
           </Col>
         ))}
       </Row>
