@@ -7,6 +7,7 @@ import TvShows from "./components/TvShows";
 import Account from "./components/Account";
 import MovieDetails from "./components/MOvieDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Settings from "./components/Settings";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="tv-shows" element={<TvShows title="Tv Shows" />} />
         <Route path="account" element={<Account title="Account" />} />
         <Route path="/:movieId" element={<MovieDetails title="Movie Details" />} />
+        <Route path="/settings" element={<Settings title="Settings" />} />
       </Routes>
       <MyFooter />
     </BrowserRouter>

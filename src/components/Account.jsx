@@ -1,6 +1,7 @@
 import { useState } from "react";
 import avatar from "../assets/avatar.png";
 import { Button, Container, Dropdown, Row, Col, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Account = function () {
   const [showSettings, setShowSettings] = useState(false);
@@ -14,9 +15,9 @@ const Account = function () {
           <Row>
             <Col xs={9} sm={4} lg={3}>
               <img src={avatar} alt="avatar" className="rounded d-block" width={100} />
-              <Button className="btn d-block border border-secondary my-3" id="settingBtn" onClick={() => setShowSettings(!showSettings)}>
-                <i className="bi bi-gear-wide-connected"></i>
-              </Button>
+              <Link to="/settings" className="btn d-inline-block border border-secondary my-3 px-3" id="settingBtn">
+                <i className="bi bi-gear-wide-connected text-white"></i>
+              </Link>
             </Col>
             <Col xs={9} sm={8} lg={9}>
               <h3 className="bg-secondary px-3 py-1 text-white">Strive Student</h3>
@@ -53,74 +54,6 @@ const Account = function () {
               </div>
             </Col>
           </Row>
-          {showSettings && (
-            <Row className="g-2 g-md-3 g-xl-4">
-              <Col xs={12} md={8} className="justify-content-center">
-                <h1 className="display-3 text-white">Settings</h1>
-                <hr />
-
-                <h3 className="bg-secondary px-3 py-1 text-white">Strive Student</h3>
-                <div className="d-flex justify-content-between">
-                  <div>
-                    <h3 className="text-secondary mt-5">Country</h3>
-                    <Dropdown className="border-bottom border-secondary mb-4 pb-3 text-white">
-                      <Dropdown.Toggle
-                        className="btn text-white bg-black btn-outline-light rounded-0 px-4 py-1 languageBtn"
-                        type="button"
-                        aria-expanded="false"
-                      >
-                        Ireland
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">UK</Dropdown.Item>
-                        <Dropdown.Item href="#" active>
-                          Ireland
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">Spain</Dropdown.Item>
-                        <Dropdown.Item href="#">France</Dropdown.Item>
-                        <Dropdown.Item href="#">Italia</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                  <div>
-                    <h3 className="text-secondary mt-5">Audio</h3>
-                    <Dropdown className="border-bottom border-secondary mb-4 pb-3 text-white">
-                      <Dropdown.Toggle
-                        className="btn text-white bg-black btn-outline-light rounded-0 px-4 py-1 languageBtn"
-                        type="button"
-                        aria-expanded="false"
-                      >
-                        Default
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#" active>
-                          Deafult
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#">Sport</Dropdown.Item>
-                        <Dropdown.Item href="#">Cinema</Dropdown.Item>
-                        <Dropdown.Item href="#">Music</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                  <div>
-                    <h3 className="text-secondary mt-5">Devices</h3>
-                    <ListGroup variant="flush">
-                      <ListGroup.Item>Zaira's IPhone </ListGroup.Item>
-                      <ListGroup.Item>Laptop 65th02l </ListGroup.Item>
-                      <ListGroup.Item>LG Smart Tv 7935 </ListGroup.Item>
-                      <ListGroup.Item>Angelo's Iphone </ListGroup.Item>
-                      <ListGroup.Item>Mariapia's Google Pixel 7 </ListGroup.Item>
-                    </ListGroup>
-                  </div>
-                </div>
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-5">
-                  <Button className="btn btn-dark btn-lg rounded-0 border border-secondary text-secondary px-4 flexBtn">SAVE</Button>
-                  <Button className="btn btn-dark btn-lg rounded-0 border border-secondary text-secondary px-4 flexBtn">CANCEL</Button>
-                  <Button className="btn btn-dark btn-lg rounded-0 border border-secondary text-secondary px-4 flexBtn">DELETE PROFILE</Button>
-                </div>
-              </Col>
-            </Row>
-          )}
         </Col>
       </Row>
     </Container>
