@@ -5,20 +5,21 @@ import "./components/Headings";
 import "./components/MyFooter";
 import MyNav from "./components/MyNav";
 import MyFooter from "./components/MyFooter";
-import Headings from "./components/Headings";
-import Gallery from "./components/Gallery";
+import Homepage from "./components/Homepage";
+import TvShows from "./components/TvShows";
 
 const App = function () {
   return (
     <>
       <MyNav />
+      <Homepage title="Movies" />
+      {/*
       <Headings />
       <Gallery title="Harry Potter" query="Harry Potter" />
       <Gallery title="Il Signore degli Anelli" query="Lord of The Ring" />
       <Gallery title="Star Wars" query="Star Wars" />
-      <Gallery title="The Hunger Games" query="Hunger Games" />
-      <Gallery title="Poirot" query="Poirot" />
-      <Gallery title="sdupba" query="dauepi" />
+      <Gallery title="The Hunger Games" query="Hunger Games" /> */}
+      <TvShows title="Tv Shows" />
       <MyFooter />
     </>
   );

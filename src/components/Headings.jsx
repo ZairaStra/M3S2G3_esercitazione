@@ -1,11 +1,11 @@
 import { Container, Dropdown } from "react-bootstrap";
 
-const Headings = function () {
+const Headings = function ({ title }) {
   return (
     <Container fluid>
       <div className="d-flex justify-content-between">
         <div className="d-flex">
-          <h2 className="mb-4">TV Shows</h2>
+          <h2 className="mb-4">{title}</h2>
           <div className="btn-group" role="group">
             <Dropdown className="ms-4 mt-1">
               <Dropdown.Toggle variant="secondary" className=" btn-sm  rounded-0" style={{ backgroundColor: "#221f1f" }}>

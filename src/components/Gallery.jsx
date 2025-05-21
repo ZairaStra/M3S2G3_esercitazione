@@ -1,4 +1,25 @@
-import { Component } from "react";
+import { Col, Container, Row, Card } from "react-bootstrap";
+
+const Gallery = ({ title, movies }) => {
+  return (
+    <Container fluid className="mb-3">
+      <h4 className="d-inline-block mb-3">{title}</h4>
+      <Row xs={1} sm={2} lg={4} xl={6} className="g-4">
+        {movies.map((movie) => (
+          <Col key={movie.imdbID} className="text-center">
+            <Card>
+              <Card.Img variant="top" src={movie.Poster} className="card-img img-fluid" />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
+
+export default Gallery;
+
+/* import { Component } from "react";
 import { Alert, Col, Container, Row, Card, Spinner } from "react-bootstrap";
 
 class Gallery extends Component {
@@ -23,7 +44,7 @@ class Gallery extends Component {
         this.setState({
           isLoading: false,
           hasError: true,
-          errorMessage: "Loading Failed" /* data.Error */,
+          errorMessage: "Loading Failed" ,
         });
       }
     } catch (error) {
@@ -71,3 +92,4 @@ class Gallery extends Component {
 }
 
 export default Gallery;
+ */
